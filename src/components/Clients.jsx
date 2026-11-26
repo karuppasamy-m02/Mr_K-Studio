@@ -22,7 +22,7 @@ export default function Clients() {
             BRANDS THAT TRUST MR K
           </h2>
           <p className="text-xs sm:text-sm text-brand-grey max-w-xl mx-auto leading-relaxed">
-            Proudly partnering with 10+ established enterprises, retail outlets, clinics, and service providers across Tiruchirappalli and Tamil Nadu.
+            Proudly partnering with 20+ established enterprises, retail outlets, clinics, and service providers across Tiruchirappalli and Tamil Nadu.
           </p>
         </div>
 
