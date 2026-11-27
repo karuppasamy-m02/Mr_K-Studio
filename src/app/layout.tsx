@@ -132,8 +132,8 @@ export default function RootLayout({
         <meta name="ICBM" content="10.7905, 78.7047" />
 
         {/* Generative Engine Optimization (GEO) & AI Discovery Links */}
-        <link rel="author" href="https://mrkagency.com/about/karuppasamy-m" />
-        <link rel="alternate" type="text/plain" href="https://mrkagency.com/llms.txt" title="LLM Content Manifest" />
+        <link rel="author" href="https://mrk-pearl.vercel.app/about/karuppasamy-m" />
+        <link rel="alternate" type="text/plain" href="https://mrk-pearl.vercel.app/llms.txt" title="LLM Content Manifest" />
       </head>
       <body className="bg-brand-deepBlack text-brand-warmWhite font-sans antialiased selection:bg-brand-yellow selection:text-brand-deepBlack overflow-x-hidden min-h-screen flex flex-col justify-between">
         <LanguageProvider>

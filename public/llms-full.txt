@@ -44,4 +44,4 @@ MR K is headquartered in Tiruchirappalli (Trichy), Tamil Nadu, India (PIN: 62001
 - **Phone:** +91 8270374293
 - **WhatsApp:** https://wa.me/918270374293
 - **Email:** contact@mrkagency.com
-- **Official Portal:** https://mrkagency.com
+- **Official Portal:** https://mrk-pearl.vercel.app

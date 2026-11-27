@@ -3,8 +3,8 @@ export const siteConfig = {
   alternateNames: ["Mr K", "MRK", "MR K Digital Growth Agency"],
   tagline: "We Don't Just Build Businesses. We Build Brands That Matter.",
   description: "MR K is a premier digital branding and growth company founded by Karuppasamy M (Mr K) in Tiruchirappalli (Trichy), Tamil Nadu. We specialize in personal branding, high-converting website development, social media management, cinematic video editing, and performance SEO.",
-  domain: "https://mrkagency.com",
-  canonicalDomain: "https://mrkagency.com",
+  domain: "https://mrk-pearl.vercel.app",
+  canonicalDomain: "https://mrk-pearl.vercel.app",
   vercelUrl: "https://mrk-pearl.vercel.app",
   
   // Founder details
