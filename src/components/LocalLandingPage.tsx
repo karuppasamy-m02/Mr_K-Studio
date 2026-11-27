@@ -228,7 +228,7 @@ export default function LocalLandingPage({ data }: { data: LocalPageProps }) {
               <div className="w-full h-52 rounded-2xl overflow-hidden border border-white/10">
                 <iframe
                   title={`MR K Agency — ${data.primaryLocation} Map`}
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d62688.75628527341!2d78.6508365287515!3d10.816008688534578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf50ff2aecdad%3A0x6de02c40bba50a80!2sTiruchirappalli%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(data.primaryLocation + ', Tamil Nadu, India')}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
                   width="100%"
                   height="100%"
                   style={{ border: 0, filter: 'grayscale(1) invert(0.92) contrast(1.2)' }}
