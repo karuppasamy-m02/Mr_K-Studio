@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Volume2, VolumeX, Pause, Play, Sparkles, TrendingUp, Award, Star } from 'lucide-react';
 import HeroHeadline from './hero/HeroHeadline';
@@ -14,20 +14,40 @@ export default function Hero() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
 
+  // Guarantee browser autoplay by forcing native muted property on mount
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => setIsPlaying(true))
+          .catch(() => {
+            // If browser blocks autoplay, keep muted and try on first user interaction
+            setIsPlaying(false);
+          });
+      }
+    }
+  }, []);
+
   const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play().then(() => setIsPlaying(true)).catch(() => {});
     } else {
-      videoRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+      video.pause();
+      setIsPlaying(false);
     }
   };
 
   const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setIsMuted(video.muted);
   };
 
   return (
@@ -35,28 +55,33 @@ export default function Hero() {
       id="home"
       className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-between pt-24 sm:pt-28 lg:pt-32 bg-[#080808] text-white overflow-hidden"
     >
-      {/* 1. Cinematic Full-Bleed Video Background */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none -z-10 select-none">
+      {/* 1. Cinematic Full-Bleed Video Background (z-0 sits above section background) */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0 select-none">
         <video
           ref={videoRef}
-          src="/videos/hero-sculpture.mp4"
           autoPlay
           loop
-          muted={isMuted}
+          muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover object-center filter brightness-[0.42] contrast-[1.12] saturate-[1.1] scale-105"
-        />
+          className="w-full h-full object-cover object-center filter brightness-95 contrast-105 saturate-110 transform scale-[1.02]"
+        >
+          <source src="/videos/hero-sculpture.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
-        {/* Sophisticated Luxury Editorial Gradients for Razor-Sharp Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/90 via-[#080808]/50 to-[#080808]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/95 via-[#080808]/65 to-[#080808]/85" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_25%,#080808_92%)]" />
-        <div className="absolute inset-0 bg-subtle-grid opacity-25" />
+        {/* Sophisticated Luxury Gradient: Left side shaded for crisp typography, right side transparent so gold sculpture shines */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/95 via-[#080808]/70 to-[#080808]/30 lg:to-transparent z-10" />
+        
+        {/* Top & Bottom Cinematic Edge Fades */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/80 via-transparent to-[#080808] z-10" />
+        
+        {/* Subtle Architectural Grid */}
+        <div className="absolute inset-0 bg-subtle-grid opacity-20 z-10" />
       </div>
 
       {/* 2. Main Hero Content Layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex items-center relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full py-8 lg:py-12">
           
           {/* Left Column: Headline & Actions */}
@@ -73,7 +98,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 25 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.85, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full max-w-md p-6 sm:p-7 rounded-2xl bg-[#101010]/80 border border-[#D4AF37]/25 backdrop-blur-xl shadow-[0_0_50px_rgba(212,175,55,0.08)] relative overflow-hidden group"
+              className="w-full max-w-md p-6 sm:p-7 rounded-2xl bg-[#080808]/70 border border-[#D4AF37]/35 backdrop-blur-xl shadow-[0_0_50px_rgba(212,175,55,0.12)] relative overflow-hidden group"
             >
               {/* Gold Corner Accents */}
               <div className="absolute top-2 left-2 w-3 h-[1px] bg-[#FFD700]" />
@@ -102,7 +127,7 @@ export default function Hero() {
 
               {/* Key Metrics Grid */}
               <div className="grid grid-cols-2 gap-4 py-2">
-                <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08]">
                   <div className="flex items-center gap-2 text-[#FFD700] mb-1">
                     <TrendingUp className="w-4 h-4" />
                     <span className="text-xl sm:text-2xl font-display font-black text-white">100+</span>
@@ -110,7 +135,7 @@ export default function Hero() {
                   <p className="text-[11px] text-[#A1A1A1] font-sans">Brands Transformed</p>
                 </div>
 
-                <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08]">
                   <div className="flex items-center gap-2 text-[#D4AF37] mb-1">
                     <Award className="w-4 h-4" />
                     <span className="text-xl sm:text-2xl font-display font-black text-white">₹50Cr+</span>
@@ -130,13 +155,13 @@ export default function Hero() {
             </motion.div>
 
             {/* Video Controls Pill */}
-            <div className="flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-[#101010]/80 border border-white/[0.1] backdrop-blur-md text-[11px] text-[#A1A1A1] shadow-lg">
-              <span className="text-[10px] font-mono tracking-wider text-[#A1A1A1]">BACKGROUND MOTION</span>
+            <div className="flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-[#080808]/80 border border-white/[0.12] backdrop-blur-md text-[11px] text-[#A1A1A1] shadow-lg pointer-events-auto">
+              <span className="text-[10px] font-mono tracking-wider text-[#E8D6A3]">4K CINEMATIC MOTION</span>
               <div className="w-[1px] h-3 bg-white/20" />
               <button
                 type="button"
                 onClick={togglePlay}
-                className="hover:text-[#FFD700] transition-colors p-1"
+                className="hover:text-[#FFD700] transition-colors p-1 focus:outline-none"
                 aria-label={isPlaying ? 'Pause background video' : 'Play background video'}
               >
                 {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-current" />}
@@ -144,7 +169,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={toggleMute}
-                className="hover:text-[#FFD700] transition-colors p-1"
+                className="hover:text-[#FFD700] transition-colors p-1 focus:outline-none"
                 aria-label={isMuted ? 'Unmute video audio' : 'Mute video audio'}
               >
                 {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
@@ -157,12 +182,12 @@ export default function Hero() {
       </div>
 
       {/* 3. Advanced Animated Scrolling Ribbon */}
-      <div className="relative z-10 border-t border-[#D4AF37]/25">
+      <div className="relative z-20 border-t border-[#D4AF37]/25">
         <ScrollingRibbon />
       </div>
 
       {/* 4. Lower Minimal Trust Strip */}
-      <div className="relative z-10 border-t border-white/[0.06]">
+      <div className="relative z-20 border-t border-white/[0.06]">
         <HeroTrustStrip />
       </div>
     </section>
