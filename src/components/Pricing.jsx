@@ -16,7 +16,7 @@ export default function Pricing() {
   };
 
   return (
-    <section id="packages" className="relative py-28 bg-brand-secondaryBlack border-t border-white/5 overflow-hidden">
+    <section id="pricing" className="relative py-28 bg-brand-secondaryBlack border-t border-white/5 overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-brand-yellow/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />

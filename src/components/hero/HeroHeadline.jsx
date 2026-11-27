@@ -6,58 +6,35 @@ import { motion, useReducedMotion } from 'framer-motion';
 export default function HeroHeadline() {
   const shouldReduceMotion = useReducedMotion();
 
-  const lines = [
-    { text: "WE DON'T JUST", highlight: false },
-    { text: "BUILD BUSINESSES.", highlight: false },
-    { text: "WE BUILD", highlight: false },
-    { text: "BRANDS THAT", highlight: true },
-    { text: "MATTER.", highlight: true },
-  ];
-
-  const lineVariants = {
-    hidden: { y: shouldReduceMotion ? 0 : "100%", opacity: shouldReduceMotion ? 0 : 0.2 },
-    visible: (i) => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.7,
-        ease: [0.16, 1, 0.3, 1],
-        delay: 0.15 + i * 0.1,
-      },
-    }),
-  };
-
   return (
-    <div className="space-y-4">
-      {/* Eyebrow */}
+    <div className="space-y-6">
+      {/* Editorial Eyebrow Tag */}
       <motion.div
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
+        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="flex items-center gap-2.5"
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#101010]/90 border border-[#D4AF37]/30 shadow-[0_0_20px_rgba(212,175,55,0.15)] backdrop-blur-md"
       >
-        <span className="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-pulse" />
-        <p className="font-display text-[11px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-brand-yellow">
-          DIGITAL BRANDING STUDIO · TRICHY, INDIA
-        </p>
+        <span className="w-2 h-2 rounded-full bg-[#FFD700] animate-pulse" />
+        <span className="font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em] text-[#E8D6A3]">
+          DIGITAL BRANDING & 3D CREATIVE STUDIO · TRICHY
+        </span>
       </motion.div>
 
-      {/* Main Headline with Masked Line Reveals */}
-      <h1 className="font-display font-black text-[clamp(2.5rem,6.2vw,5.6rem)] leading-[0.94] tracking-tight uppercase text-brand-warmWhite">
-        {lines.map((line, idx) => (
-          <div key={idx} className="overflow-hidden">
-            <motion.div
-              custom={idx}
-              variants={lineVariants}
-              initial="hidden"
-              animate="visible"
-              className={line.highlight ? "text-brand-yellow" : "text-brand-warmWhite"}
-            >
-              {line.text}
-            </motion.div>
-          </div>
-        ))}
-      </h1>
+      {/* Main Luxury Editorial Headline */}
+      <motion.h1
+        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        className="font-display font-black text-4xl sm:text-6xl lg:text-7xl xl:text-[5rem] leading-[0.98] tracking-tight uppercase text-white"
+      >
+        <span>WE DON&apos;T JUST</span> <br />
+        <span>BUILD BUSINESSES.</span> <br />
+        <span className="text-[#A1A1A1]">WE BUILD </span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#F0D892] to-[#D4AF37] drop-shadow-[0_2px_20px_rgba(255,215,0,0.25)]">
+          BRANDS THAT MATTER.
+        </span>
+      </motion.h1>
     </div>
   );
 }

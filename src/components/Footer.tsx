@@ -1,15 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import { 
-  MessageCircle, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Instagram, 
-  Linkedin, 
-  Youtube, 
-  Facebook, 
-  Github, 
+import {
+  MessageCircle,
+  MapPin,
+  Phone,
+  Mail,
+  Instagram,
+  Linkedin,
+  Youtube,
+  Facebook,
+  Github,
   ArrowUpRight,
   ShieldCheck
 } from 'lucide-react';
@@ -40,7 +40,7 @@ export default function Footer() {
     { name: "About Karuppasamy M (Mr K)", href: "/about/karuppasamy-m" },
     { name: "Client Portfolio", href: "/#work" },
     { name: "Verified Client Reviews", href: "/#reviews" },
-    { name: "Growth Packages & Pricing", href: "/#packages" },
+    { name: "Growth Packages & Pricing", href: "/#pricing" },
     { name: "All Links & Profiles", href: "/links" },
     { name: "Blog & SEO Guides", href: "/blog" },
     { name: "Submit a Review", href: "/reviews/submit" },
@@ -51,10 +51,10 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#050505] border-t border-white/[0.08] pt-20 pb-12 overflow-hidden text-brand-grey text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Main 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-white/[0.08]">
-          
+
           {/* Column 1: Identity & Complete NAP (Cols 1-4) */}
           <div className="lg:col-span-4 space-y-5">
             <Link href="/" className="inline-flex items-center gap-3">

@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '@/components/Hero';
 import BrandStats from '@/components/BrandStats';
+import About from '@/components/About';
 import Services from '@/components/Services';
 import Process from '@/components/Process';
 import FounderPreview from '@/components/FounderPreview';
@@ -32,6 +33,9 @@ export default function HomePage() {
 
       {/* 2. Trust Metrics Bar */}
       <BrandStats />
+
+      {/* 2.5 About MR K Agency */}
+      <About />
 
       {/* 3. Core Services Section */}
       <Services />

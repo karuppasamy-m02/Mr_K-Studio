@@ -100,17 +100,30 @@ export default function About() {
             {/* Founder Note Card */}
             <div className="glass-panel p-6 rounded-2xl border border-white/10 space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-brand-yellow/15 border border-brand-yellow/40 flex items-center justify-center text-brand-yellow font-bold text-sm">
-                  K
+                <div className="w-10 h-10 rounded-full overflow-hidden border border-[#FFD700] p-0.5 bg-[#080808] shrink-0">
+                  <img
+                    src="/logo/mrk-logo.png"
+                    alt="Karuppasamy M"
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
                 <div>
-                  <h4 className="text-sm font-display font-bold text-brand-warmWhite">The Founder Behind MR K</h4>
-                  <p className="text-[11px] text-brand-yellow font-medium">Founder & Creative Director</p>
+                  <h4 className="text-sm font-display font-bold text-brand-warmWhite">Karuppasamy M (Mr K)</h4>
+                  <p className="text-[11px] text-brand-yellow font-medium">Founder & Principal Growth Architect</p>
                 </div>
               </div>
               <p className="text-xs text-brand-grey leading-relaxed">
-                "I started MR K with a clear determination: local businesses in Trichy and Tamil Nadu deserve world-class branding and digital experiences that rival global leaders. We don't make generic marketing noise. We build memorable identities and digital engines that generate respect and real business revenue."
+                &ldquo;I founded MR K with a clear determination: ambitious businesses in Trichy and Tamil Nadu deserve world-class branding, modern technology, and performance marketing that rival global creative studios. We build memorable identities and digital growth engines that command premium respect.&rdquo;
               </p>
+              <div className="pt-1">
+                <a
+                  href="/about/karuppasamy-m"
+                  className="text-xs font-bold text-[#FFD700] hover:underline inline-flex items-center gap-1"
+                >
+                  <span>Read Founder Story & Credentials</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </div>
 
