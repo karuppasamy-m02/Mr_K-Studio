@@ -74,5 +74,5 @@ Allow: /
 # ------------------------------------------------------------------------------
 # Official Sitemaps & Host
 # ------------------------------------------------------------------------------
-Sitemap: https://mrkagency.com/sitemap.xml
-Host: https://mrkagency.com
+Sitemap: https://mrk-pearl.vercel.app/sitemap.xml
+Host: https://mrk-pearl.vercel.app
