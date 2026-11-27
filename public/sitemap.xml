@@ -1,51 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Website Pages -->
   <url>
     <loc>https://mrkagency.com/</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mrkagency.com/#about</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mrkagency.com/#services</loc>
-    <lastmod>2026-11-26</lastmod>
+    <loc>https://mrkagency.com/about/karuppasamy-m</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mrkagency.com/#work</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mrkagency.com/#packages</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://mrkagency.com/#reviews</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://mrkagency.com/links</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://mrkagency.com/#trichy-local</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mrkagency.com/blog</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://mrkagency.com/#contact</loc>
-    <lastmod>2026-11-26</lastmod>
+    <loc>https://mrkagency.com/privacy-policy</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/terms-of-service</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/reviews/submit</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Core Services & Local SEO Trichy -->
+  <url>
+    <loc>https://mrkagency.com/digital-marketing-agency-trichy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/branding-agency-trichy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/website-development-trichy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/social-media-marketing-trichy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/seo-services-trichy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/logo-design-trichy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/video-editing-services-trichy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Regional & Area GEO Hubs -->
+  <url>
+    <loc>https://mrkagency.com/digital-marketing-thillai-nagar</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/digital-marketing-srirangam</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/digital-marketing-thanjavur</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/digital-marketing-karur</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/digital-marketing-madurai</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/digital-marketing-coimbatore</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/digital-marketing-chennai</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- In-Depth Educational & GEO Guides -->
+  <url>
+    <loc>https://mrkagency.com/blog/digital-marketing-cost-trichy-2026</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/blog/how-to-choose-branding-agency-trichy</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/blog/why-every-trichy-business-needs-website</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/blog/local-seo-trichy-google-maps-ranking-guide</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/blog/meta-ads-vs-google-ads-tamil-nadu-businesses</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/blog/personal-branding-for-business-founders-india</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/blog/short-form-video-reels-strategy-regional-brands</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/blog/healthcare-hospital-marketing-trichy-compliance</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/blog/b2b-export-marketing-manufacturing-tamil-nadu</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mrkagency.com/blog/generative-engine-optimization-geo-future-of-seo</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 </urlset>

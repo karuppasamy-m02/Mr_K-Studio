@@ -93,6 +93,12 @@ export const metadata: Metadata = {
   verification: {
     google: 'google88508b1f83aa1a3b',
   },
+  other: {
+    'geo.region': 'IN-TN',
+    'geo.placename': 'Tiruchirappalli, Tamil Nadu, India',
+    'geo.position': '10.7905;78.7047',
+    'ICBM': '10.7905, 78.7047',
+  },
 };
 
 export default function RootLayout({
@@ -118,6 +124,16 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        {/* Geographic / Local SEO Meta Tags */}
+        <meta name="geo.region" content="IN-TN" />
+        <meta name="geo.placename" content="Tiruchirappalli, Tamil Nadu, India" />
+        <meta name="geo.position" content="10.7905;78.7047" />
+        <meta name="ICBM" content="10.7905, 78.7047" />
+
+        {/* Generative Engine Optimization (GEO) & AI Discovery Links */}
+        <link rel="author" href="https://mrkagency.com/about/karuppasamy-m" />
+        <link rel="alternate" type="text/plain" href="https://mrkagency.com/llms.txt" title="LLM Content Manifest" />
       </head>
       <body className="bg-brand-deepBlack text-brand-warmWhite font-sans antialiased selection:bg-brand-yellow selection:text-brand-deepBlack overflow-x-hidden min-h-screen flex flex-col justify-between">
         <LanguageProvider>

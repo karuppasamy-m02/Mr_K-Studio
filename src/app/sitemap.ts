@@ -1,12 +1,13 @@
 import { MetadataRoute } from 'next';
 import { siteConfig } from '@/data/config';
+import { blogPosts } from '@/data/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.domain;
   const currentDate = new Date().toISOString();
 
-  // Core Pages
-  const routes = [
+  // 1. Core Pages
+  const coreRoutes = [
     '',
     '/about/karuppasamy-m',
     '/links',
@@ -14,8 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy-policy',
     '/terms-of-service',
     '/reviews/submit',
-    
-    // Core Services Local SEO
+  ];
+
+  // 2. Core Services Local SEO Landing Pages
+  const serviceRoutes = [
     '/digital-marketing-agency-trichy',
     '/branding-agency-trichy',
     '/website-development-trichy',
@@ -23,8 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/seo-services-trichy',
     '/logo-design-trichy',
     '/video-editing-services-trichy',
+  ];
 
-    // Regional & Area Landing Pages
+  // 3. Regional GEO Landing Pages (Trichy & Surrounding Hubs)
+  const regionalRoutes = [
     '/digital-marketing-thillai-nagar',
     '/digital-marketing-srirangam',
     '/digital-marketing-thanjavur',
@@ -32,17 +37,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/digital-marketing-madurai',
     '/digital-marketing-coimbatore',
     '/digital-marketing-chennai',
-
-    // Blog In-depth Guides
-    '/blog/digital-marketing-cost-trichy-2026',
-    '/blog/how-to-choose-branding-agency-trichy',
-    '/blog/why-every-trichy-business-needs-website'
   ];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: currentDate,
-    changeFrequency: route === '' ? 'daily' : route.startsWith('/blog') ? 'weekly' : 'monthly',
-    priority: route === '' ? 1.0 : route.startsWith('/digital-marketing-agency') ? 0.9 : 0.8,
-  }));
+  // 4. In-Depth Blog & Thought Leadership Guides (10 Posts)
+  const blogRoutes = blogPosts.map((post) => `/blog/${post.slug}`);
+
+  return [
+    ...coreRoutes.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: currentDate,
+      changeFrequency: (route === '' ? 'daily' : 'weekly') as const,
+      priority: route === '' ? 1.0 : 0.85,
+    })),
+    ...serviceRoutes.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    })),
+    ...regionalRoutes.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    })),
+    ...blogRoutes.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
+  ];
 }
