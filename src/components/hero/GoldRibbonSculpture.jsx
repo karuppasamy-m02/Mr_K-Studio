@@ -157,7 +157,7 @@ export default function GoldRibbonSculpture() {
         const rotatedNormal = new THREE.Vector3()
           .copy(normal)
           .multiplyScalar(cosT)
-          .subScaledVector(binormal, sinT)
+          .addScaledVector(binormal, -sinT)
           .normalize();
 
         // 4 corners of ribbon cross section
