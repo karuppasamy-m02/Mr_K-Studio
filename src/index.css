@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-space: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-tamil: 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

@@ -1,0 +1,21 @@
+{
+  "name": "MR K Digital Growth Agency",
+  "short_name": "MR K",
+  "description": "Premier digital branding, web development, and growth company in Tiruchirappalli, Tamil Nadu.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "icons": [
+    {
+      "src": "/logo/mrk-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/mrk-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

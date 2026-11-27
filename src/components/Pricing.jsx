@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Sparkles, ArrowRight, AlertCircle, HelpCircle, Layers, Globe } from 'lucide-react';

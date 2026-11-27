@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Building2, MapPin, Sparkles, Handshake } from 'lucide-react';

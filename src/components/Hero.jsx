@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import HeroHeadline from './hero/HeroHeadline';
 import HeroActions from './hero/HeroActions';
