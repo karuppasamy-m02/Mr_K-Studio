@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, Menu, X, ArrowRight } from 'lucide-react';
-import { WHATSAPP_NUMBER } from '../utils/whatsapp';
+import { siteConfig } from '@/data/config';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -11,7 +13,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
-      const sections = ['home', 'about', 'services', 'work', 'packages', 'reviews', 'trichy-local', 'contact'];
+      const sections = ['home', 'about', 'services', 'work', 'packages', 'reviews', 'contact'];
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
         if (el) {
@@ -41,13 +43,19 @@ export default function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setMobileMenuOpen(false);
+
+    if (window.location.pathname !== '/') {
+      window.location.href = `/${href}`;
+      return;
+    }
+
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
-  const whatsappQuickUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello MR K! I would like to discuss a digital branding & growth project for my business.")}`;
+  const whatsappQuickUrl = `https://wa.me/${siteConfig.contact.whatsappRaw}?text=${encodeURIComponent("Hello MR K! I would like to discuss a digital branding & growth project for my business.")}`;
 
   return (
     <header
@@ -67,7 +75,7 @@ export default function Navbar() {
             className="flex items-center gap-3.5 group focus:outline-none"
             aria-label="MR K Studio Home"
           >
-            <div className="w-10 h-10 rounded-full overflow-hidden border border-white/[0.15] group-hover:border-brand-yellow transition-colors bg-[#080808] flex items-center justify-center p-0.5">
+            <div className="w-10 h-10 rounded-full overflow-hidden border border-white/[0.15] group-hover:border-[#FFD700] transition-colors bg-[#080808] flex items-center justify-center p-0.5 shrink-0">
               <img
                 src="/logo/mrk-logo.png"
                 alt="MR K Logo"
@@ -75,11 +83,11 @@ export default function Navbar() {
                 loading="eager"
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-display font-extrabold text-lg tracking-wider text-brand-warmWhite group-hover:text-brand-yellow transition-colors leading-none">
+            <div className="flex flex-col text-left">
+              <span className="font-display font-extrabold text-lg tracking-wider text-white group-hover:text-[#FFD700] transition-colors leading-none">
                 MR K
               </span>
-              <span className="text-[9px] tracking-[0.2em] uppercase text-brand-grey font-medium mt-1">
+              <span className="text-[9px] tracking-[0.2em] uppercase text-[#A1A1A1] font-medium mt-1">
                 Studio
               </span>
             </div>
@@ -96,13 +104,13 @@ export default function Navbar() {
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`transition-colors py-1 relative ${
                     isActive
-                      ? 'text-brand-yellow font-bold'
-                      : 'text-brand-grey hover:text-brand-yellow'
+                      ? 'text-[#FFD700] font-bold'
+                      : 'text-[#A1A1A1] hover:text-[#FFD700]'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-brand-yellow" />
+                    <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-[#FFD700]" />
                   )}
                 </a>
               );
@@ -115,19 +123,19 @@ export default function Navbar() {
               href={whatsappQuickUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-none bg-transparent text-brand-grey hover:text-brand-yellow border border-white/[0.1] hover:border-brand-yellow/60 transition-all"
+              className="p-2.5 rounded-none bg-transparent text-[#A1A1A1] hover:text-[#FFD700] border border-white/[0.1] hover:border-[#FFD700]/60 transition-all"
               aria-label="Direct WhatsApp Message"
               title="Chat on WhatsApp (+91 8270374293)"
             >
-              <MessageCircle className="w-4 h-4 text-brand-yellow" />
+              <MessageCircle className="w-4 h-4 text-[#FFD700]" />
             </a>
 
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="px-5 py-2.5 rounded-none bg-brand-yellow text-brand-deepBlack font-display font-bold text-xs uppercase tracking-[0.14em] hover:bg-[#F2CA2C] active:scale-[0.98] transition-all flex items-center gap-2 group"
+              className="px-5 py-2.5 rounded-none bg-[#FFD700] text-[#080808] font-display font-bold text-xs uppercase tracking-[0.14em] hover:bg-[#E5C100] active:scale-[0.98] transition-all flex items-center gap-2 group"
             >
-              <span>Let's Talk</span>
+              <span>Let&apos;s Talk</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
             </a>
           </div>
@@ -138,7 +146,7 @@ export default function Navbar() {
               href={whatsappQuickUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-brand-yellow border border-white/[0.1]"
+              className="p-2 text-[#FFD700] border border-white/[0.1]"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
@@ -146,10 +154,10 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-brand-warmWhite border border-white/[0.1] hover:border-brand-yellow focus:outline-none"
+              className="p-2 text-white border border-white/[0.1] hover:border-[#FFD700] focus:outline-none"
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-brand-yellow" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#FFD700]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
@@ -163,7 +171,7 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col space-y-4">
-          <p className="text-[10px] uppercase tracking-[0.25em] text-brand-yellow font-bold pb-2 border-b border-white/[0.08]">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#FFD700] font-bold pb-2 border-b border-white/[0.08]">
             Index
           </p>
           {navLinks.map((link) => {
@@ -174,27 +182,27 @@ export default function Navbar() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`text-sm font-display tracking-wider uppercase py-2 flex items-center justify-between border-b border-white/[0.04] ${
-                  isActive ? 'text-brand-yellow font-bold' : 'text-brand-grey hover:text-brand-warmWhite'
+                  isActive ? 'text-[#FFD700] font-bold' : 'text-[#A1A1A1] hover:text-white'
                 }`}
               >
                 <span>{link.name}</span>
-                <span className="text-xs text-brand-grey/50">→</span>
+                <span className="text-xs text-[#A1A1A1]/50">→</span>
               </a>
             );
           })}
         </div>
 
         <div className="pt-6 border-t border-white/[0.08] space-y-3">
-          <div className="text-[11px] text-brand-grey space-y-0.5">
-            <p className="text-brand-warmWhite font-bold">MR K Studio</p>
+          <div className="text-[11px] text-[#A1A1A1] space-y-0.5">
+            <p className="text-white font-bold">MR K Studio</p>
             <p>Tiruchirappalli, Tamil Nadu, India</p>
-            <p className="text-brand-yellow">+91 8270374293</p>
+            <p className="text-[#FFD700]">{siteConfig.contact.phone}</p>
           </div>
 
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
-            className="w-full py-3.5 bg-brand-yellow text-brand-deepBlack font-display font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2"
+            className="w-full py-3.5 bg-[#FFD700] text-[#080808] font-display font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2"
           >
             <span>Start a Project</span>
             <ArrowRight className="w-3.5 h-3.5" />
