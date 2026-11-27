@@ -90,6 +90,9 @@ export const metadata: Metadata = {
     apple: '/logo/mrk-logo.png',
   },
   manifest: '/manifest.json',
+  verification: {
+    google: 'google88508b1f83aa1a3b',
+  },
 };
 
 export default function RootLayout({
