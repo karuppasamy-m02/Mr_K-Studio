@@ -25,3 +25,6 @@ out
 *.njsproj
 *.sln
 *.sw?
+
+# Raw generated video files
+gemini_generated_video_*.mp4

@@ -17,7 +17,7 @@ export default function HeroHeadline() {
       >
         <span className="w-2 h-2 rounded-full bg-[#FFD700] animate-pulse" />
         <span className="font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em] text-[#E8D6A3]">
-          DIGITAL BRANDING & 3D CREATIVE STUDIO · TRICHY
+          DIGITAL BRANDING & GROWTH STUDIO · TRICHY, INDIA
         </span>
       </motion.div>
 
