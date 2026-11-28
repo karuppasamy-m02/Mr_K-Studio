@@ -28,13 +28,24 @@ export const metadata: Metadata = {
     'Mr K',
     'Mr K Trichy',
     'MR K Digital Marketing',
+    'MR K Digital Growth Agency',
     'Digital Marketing Agency in Trichy',
+    'Best Digital Marketing Company Trichy',
     'Branding Agency in Trichy',
     'Website Development Trichy',
+    'Web Design Company in Trichy',
     'SEO Services Tiruchirappalli',
+    'Local SEO Trichy',
     'Social Media Marketing Trichy',
     'Video Editing Services Trichy',
-    'Tamil Nadu Digital Growth Agency'
+    'Commercial Video Production Trichy',
+    'Logo Design in Trichy',
+    'Thillai Nagar Digital Marketing',
+    'Srirangam Web Design',
+    'Tamil Nadu Digital Growth Agency',
+    'Personal Branding India',
+    'Generative Engine Optimization Trichy',
+    'GEO Agency India',
   ],
   authors: [{ name: 'Karuppasamy M (Mr K)', url: `${siteConfig.domain}/about/karuppasamy-m` }],
   creator: 'Karuppasamy M',
@@ -86,8 +97,17 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/logo/mrk-logo.png',
-    apple: '/logo/mrk-logo.png',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/logo/mrk-logo.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/logo/mrk-logo.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
   },
   manifest: '/manifest.json',
   verification: {
@@ -98,6 +118,7 @@ export const metadata: Metadata = {
     'geo.placename': 'Tiruchirappalli, Tamil Nadu, India',
     'geo.position': '10.7905;78.7047',
     'ICBM': '10.7905, 78.7047',
+    'theme-color': '#080808',
   },
 };
 
@@ -125,6 +146,15 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
+        {/* Multi-Resolution Favicon & Apple Touch Icons (Official MR K Logo) */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/logo/mrk-logo.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#080808" />
+        <meta name="msapplication-TileColor" content="#FFD700" />
+
         {/* Geographic / Local SEO Meta Tags */}
         <meta name="geo.region" content="IN-TN" />
         <meta name="geo.placename" content="Tiruchirappalli, Tamil Nadu, India" />
@@ -134,6 +164,7 @@ export default function RootLayout({
         {/* Generative Engine Optimization (GEO) & AI Discovery Links */}
         <link rel="author" href="https://mrk-pearl.vercel.app/about/karuppasamy-m" />
         <link rel="alternate" type="text/plain" href="https://mrk-pearl.vercel.app/llms.txt" title="LLM Content Manifest" />
+        <link rel="alternate" type="text/plain" href="https://mrk-pearl.vercel.app/llms-full.txt" title="Full LLM Context" />
       </head>
       <body className="bg-brand-deepBlack text-brand-warmWhite font-sans antialiased selection:bg-brand-yellow selection:text-brand-deepBlack overflow-x-hidden min-h-screen flex flex-col justify-between">
         <LanguageProvider>
